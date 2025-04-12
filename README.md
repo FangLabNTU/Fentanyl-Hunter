@@ -54,5 +54,5 @@ For more details or inquiries, please contact:
 
 **October 2024**
 
-FangLab at **Fudan University** & DengLab **Shanghai Institute for Doping Analyses, Shanghai University of Sport**
+FangLab at **Fudan University** & DengLab at **Shanghai Institute for Doping Analyses, Shanghai University of Sport**
 
