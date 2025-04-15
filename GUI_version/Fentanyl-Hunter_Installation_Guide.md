@@ -2,8 +2,8 @@
 
 The graphical user interface (GUI), developed using Electron, is organized into two main tabs, consistent with the underlying script.
 
-1. The backend is built with data processing algorithms integrated into a Flask framework.
-2. The frontend is developed using Electron and Vue 3 to create a Windows desktop application.
+1. The backend, which incorporates data processing algorithms, is built using the Flask framework and is stored in the main branch.
+2. The frontend is developed with Electron and Vue 3 to create a Windows desktop application. Due to the larger file size, it is stored in the master branch.
 
 ## 1. Install Python 3.8
 
@@ -23,7 +23,7 @@ Download and install Python 3.8 from the [official Python website](https://www.p
 
 ## 3. Install Fentanyl-Hunter GUI
 
-1. Download [Fentanyl-HunterGUI](https://github.com/FangLabNTU/Fentanyl-Hunter/tree/main/GUI_version/Fentanyl-HunterGUI).
+1. Download [Fentanyl-HunterGUI](https://github.com/FangLabNTU/Fentanyl-Hunter/tree/master).
 2. Unzip the folder.
 3. Run the installer:  
    `Fentanyl-HunterGUI/Fentanyl Hunter Setup 0.0.0.exe`  
