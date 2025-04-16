@@ -81,13 +81,13 @@ The **graphical user interface (GUI)** version of *Fentanyl-Hunter*, developed u
 
 - Developed with **Flask**
 - Handles all data processing and algorithm execution
-- Source code located in the **[`main` branch](https://github.com/FangLabNTU/Fentanyl-Hunter/GUI_version/Backend_master)**
+- Source code located in the **[`main` branch](https://github.com/FangLabNTU/Fentanyl-Hunter/tree/main/GUI_version/Backend_master)**
 
 ### Frontend
 
 - Built with **Electron + Vue 3**
 - Compiled into a **Windows desktop application**
-- Due to size, the frontend is in the **[`master` branch](https://github.com/FangLabNTU/Fentanyl-Hunter)**
+- Due to size, the frontend is in the **[`master` branch](https://github.com/FangLabNTU/Fentanyl-Hunter/tree/master)**
 
 ---
 
@@ -95,8 +95,8 @@ The **graphical user interface (GUI)** version of *Fentanyl-Hunter*, developed u
 
 Please refer to the platform-specific setup instructions in the README files located in the corresponding branches:
 
-- [`main` branch](https://github.com/FangLabNTU/Fentanyl-Hunter/GUI_version_setup/Backend_master) – Backend setup  
-- [`main` branch](https://github.com/FangLabNTU/Fentanyl-Hunter/GUI_version_setup/Fentanyl-Hunter_master) – Frontend build & Electron app usage
+- [`main` branch](https://github.com/FangLabNTU/Fentanyl-Hunter/tree/main/GUI_version_setup/Backend_master) – Backend setup  
+- [`main` branch](https://github.com/FangLabNTU/Fentanyl-Hunter/tree/main/GUI_version_setup/Fentanyl-Hunter_master) – Frontend build & Electron app usage
 
 ---
 
