@@ -1,58 +1,113 @@
 # Fentanyl-Hunter
 
-**Fentanyl-Hunter** is a program designed for the screening and annotation of members of the fentanyl family based on MS/MS data. This platform has demonstrated its ability to identify fentanyl, its analogues, and metabolites in both biological and environmental samples. The methodology is detailed in the research article *"Machine Learning and Molecular Network-Assisted Screening Reveals Unknown Compounds in the Fentanyl Family"* (In preparation).
+**Fentanyl-Hunter** is a platform for screening and annotating members of the fentanyl family based on MS/MS data. It has been successfully applied to identify fentanyl, its analogues, and metabolites in biological and environmental samples.
 
-### Key Components
-The platform consists of two primary modules:
-1. **Fentanyl_Finder** – Screening of MS features.
-2. **Fentanyl_ID** – Auxiliary structure identification.
+The methodology is described in the research article *"Machine Learning and Molecular Network-Assisted Screening Reveals Unknown Compounds in the Fentanyl Family"* (in preparation).
 
-Both modules are fully written in Python. Additional scripts used in the research are included in this repository. The first authors are **Changzhi Shi** and **Wanli Li**.
+First authors: **Changzhi Shi** and **Wanli Li**
 
 ---
 
-## Repository Structure
+## 🔍 Key Components
 
-The repository contains 5 main subfolders:
+The platform consists of two main Python-based modules:
 
-### 1. Fentanyl_Finder
-This folder contains two subfolders, corresponding to different applications of the trained **Fentanyl-Hunter** machine learning model (`Fentanyl_Finder.pkl`):
+1. **Fentanyl_Finder** – Screening of MS features  
+2. **Fentanyl_ID** – Auxiliary structure identification
 
-- **Metabolite Screening**: 
-  - Demonstrates a case study of screening for in vitro metabolites of fentanyl. The input MS data file is provided as `Met-fentanyl.txt`. This is followed by peak cleaning (`clean_peak.ipynb`) and fentanyl candidate screening (`Fentanyl_Finder.ipynb`).
-  - We recommend using the **MS-DIAL** software for preliminary processing of raw MS data in TXT format. [MS-DIAL website](http://prime.psc.riken.jp/compms/msdial/main.html)
-  
-- **Confusion Matrix**: 
-  - Provides a case study of screening for unknown fentanyls in a human urine sample.
-
-### 2. Fentanyl_ID
-The main script `Fentanyl_ID.ipynb` is used to develop a multi-layer network between fentanyl candidates (after screening with Fentanyl-Hunter) and known fentanyl analogues. This is achieved by utilizing a **Paired Mass Distance (PMD)** network, which relies on a PMD list (`PMD.xlsx`).
-
-- A wastewater sample is provided as an example for the network development.
-- Additionally, the **Fentanyl Library** (`Fentanyllibrary.msp`, 772 spectra) is available for annotating seed fentanyls using MS-DIAL's "Identification" module.
-
-### 3. Fentanyl Cluster
-This script is used for chemical space visualization based on the **Tanimoto coefficient matrix** (Morgan fingerprints). The matrix is reduced via **Multi-Dimensional Scaling (MDS)**, where each point represents a structure and distances reflect structural similarities. The central structure is clustered using **K-means**.
-
-- For compound control reasons, the structures of all fentanyls are not provided directly. Please contact the authors for more information.
-
-### 4. Suspect Screening for Fentanyl
-This homemade script is used for **suspect screening** of fentanyls in MS data, utilizing **MS2 spectral characteristics**. The relevant data can be found in `MS2 list.xlsx`.
-
-### 5. Fentanyl LC RT Prediction
-This script predicts the retention time (RT) for fentanyls in **Liquid Chromatography (LC)**. The algorithm is a modified version of **GNN-RT** ([GNN-RT GitHub](https://github.com/Qiong-Yang/GNNRT)) and was calibrated using fentanyl standards measured in the same LC system.
+Additional utility scripts used in the research are also provided in this repository.
 
 ---
 
-## Contact Information
+## 📁 Repository Structure
 
-For more details or inquiries, please contact:
+### 1. `Fentanyl_Finder`
 
-- Changzhi Shi: [czshi22@m.fudan.edu.cn](mailto:czshi22@m.fudan.edu.cn)
+This folder contains two sub-applications based on the machine learning model `Fentanyl_Finder.pkl`.
+
+- **Metabolite Screening**
+  - A case study for screening in vitro fentanyl metabolites.
+  - Input MS file: `Met-fentanyl.txt`
+  - Includes peak cleaning (`clean_peak.ipynb`) and screening (`Fentanyl_Finder.ipynb`)
+  - MS preprocessing recommended using **MS-DIAL**: [MS-DIAL website](http://prime.psc.riken.jp/compms/msdial/main.html)
+
+- **Confusion Matrix**
+  - Demonstrates screening for unknown fentanyls in human urine samples.
 
 ---
 
-**October 2024**
+### 2. `Fentanyl_ID`
 
-FangLab at **Fudan University** & DengLab at **Shanghai Institute for Doping Analyses, Shanghai University of Sport**
+The `Fentanyl_ID.ipynb` script builds a multi-layer network linking screened fentanyl candidates to known analogues, using **Paired Mass Distance (PMD)** and a curated `PMD.xlsx`.
 
+- Includes a wastewater sample example
+- **Fentanyl Library** (`Fentanyllibrary.msp`, 772 spectra) supports MS-DIAL-based annotation using its “Identification” module
+
+---
+
+### 3. `Fentanyl Cluster`
+
+This script visualizes chemical space using:
+
+- **Tanimoto coefficient matrix** (Morgan fingerprints)
+- **Multi-Dimensional Scaling (MDS)**
+- **K-means** clustering for identifying core structures
+
+> **Note**: Fentanyl structures are not directly included. Contact the authors for access.
+
+---
+
+### 4. `Suspect Screening for Fentanyl`
+
+This homemade script performs **suspect screening** using MS2 spectral characteristics.  
+Reference data: `MS2 list.xlsx`
+
+---
+
+### 5. `Fentanyl LC RT Prediction`
+
+This script predicts retention times (RT) in LC for fentanyl compounds using a modified **GNN-RT** model:
+
+- Original repo: [GNN-RT GitHub](https://github.com/Qiong-Yang/GNNRT)
+- Calibrated using fentanyl standards from the same LC setup
+
+---
+
+## 🖥️ 6. GUI Version
+
+The **graphical user interface (GUI)** version of *Fentanyl-Hunter*, developed using **Electron**, offers a desktop application experience, organized into two main tabs mirroring the script-based workflow.
+
+### Backend
+
+- Developed with **Flask**
+- Handles all data processing and algorithm execution
+- Source code located in the **[`main` branch](https://github.com/FangLabNTU/Fentanyl-Hunter/GUI_version/Backend_master)**
+
+### Frontend
+
+- Built with **Electron + Vue 3**
+- Compiled into a **Windows desktop application**
+- Due to size, the frontend is in the **[`master` branch](https://github.com/FangLabNTU/Fentanyl-Hunter)**
+
+---
+
+## ⚙️ 7. How to Set Up the GUI Version
+
+Please refer to the platform-specific setup instructions in the README files located in the corresponding branches:
+
+- [`main` branch](https://github.com/FangLabNTU/Fentanyl-Hunter/GUI_version_setup/Backend_master) – Backend setup  
+- [`main` branch](https://github.com/FangLabNTU/Fentanyl-Hunter/GUI_version_setup/Fentanyl-Hunter_master) – Frontend build & Electron app usage
+
+---
+
+## 📬 Contact
+
+For questions or collaboration, feel free to reach out:
+
+- **Changzhi Shi**: [czshi22@m.fudan.edu.cn](mailto:czshi22@m.fudan.edu.cn)
+
+---
+
+**April 2025**  
+FangLab, **Fudan University**  
+DengLab, **Shanghai Institute for Doping Analyses**, Shanghai University of Sport
